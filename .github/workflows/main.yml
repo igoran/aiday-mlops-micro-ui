@@ -1,36 +1,37 @@
-# This is a basic workflow to help you get started with Actions
+name: Micro UI
 
-name: CI
+env:
+  "PULUMI_STACK_NAME": igoran/infra-micro-ui/dev
 
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    - uses: actions/checkout@v2
+      name: Checkout unshallow
+      with:
+        fetch-depth: 0
+    - name: Pulumi - Setup CLI
+      run: |
+        curl https://get.pulumi.com | bash
+        echo "::add-path::$HOME/.pulumi/bin/"
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+    - name: Pulumi - Provisioning Azure Cloud Resources
+      working-directory: ./infra
+      run: |
+        pulumi stack select ${{ env.PULUMI_STACK_NAME }} --non-interactive --create
+        pulumi config set azure:location westeurope
+        pulumi config set azure:clientId ${{ secrets.AZURE_CLIENT_ID }} 
+        pulumi config set azure:clientSecret ${{ secrets.AZURE_SECRET }} --secret  
+        pulumi config set azure:tenantId ${{ secrets.AZURE_TENANT_ID }}  
+        pulumi config set azure:subscriptionId ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        pulumi up --non-interactive --yes
+      env:
+        PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
