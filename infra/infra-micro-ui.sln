@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.808.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infra-micro-ui", "infra-micro-ui.csproj", "{E5A59A13-908A-4448-AF90-BE67AFACAF15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infra-micro-ui", "infra-micro-ui.csproj", "{D82DF619-503C-4319-A28A-96BEAC3F983E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E5A59A13-908A-4448-AF90-BE67AFACAF15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5A59A13-908A-4448-AF90-BE67AFACAF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5A59A13-908A-4448-AF90-BE67AFACAF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5A59A13-908A-4448-AF90-BE67AFACAF15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D82DF619-503C-4319-A28A-96BEAC3F983E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82DF619-503C-4319-A28A-96BEAC3F983E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82DF619-503C-4319-A28A-96BEAC3F983E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82DF619-503C-4319-A28A-96BEAC3F983E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {04ADE5B1-B273-4029-84D6-4F0089566D54}
+		SolutionGuid = {E36FF37C-A2BC-4F6D-B849-CFE8E9FE1D88}
 	EndGlobalSection
 EndGlobal
