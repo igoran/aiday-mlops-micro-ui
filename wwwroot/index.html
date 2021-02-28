@@ -17,18 +17,11 @@
 							<ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
 								<li class="flex items-center">
 									<a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#">
-										<i class="lg:text-gray-300 text-gray-500 fab fa-facebook text-lg leading-lg"></i>
-										<span class="lg:hidden inline-block ml-2">Share</span>
+										<span class="inline-block ml-2" id="lblModelVersion"></span>
 									</a>
 								</li>
 								<li class="flex items-center">
-									<a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#">
-										<i class="lg:text-gray-300 text-gray-500 fab fa-twitter text-lg leading-lg"></i>
-										<span class="lg:hidden inline-block ml-2">Tweet</span>
-									</a>
-								</li>
-								<li class="flex items-center">
-									<a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#">
+									<a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="https://github.com/igoran/aiday-mlops-model-serving">
 										<i class="lg:text-gray-300 text-gray-500 fab fa-github text-lg leading-lg"></i>
 										<span class="lg:hidden inline-block ml-2">Star</span>
 									</a>
@@ -56,11 +49,18 @@
 											<hr class="mt-6 border-b-1 border-gray-400">
 												<form>
 													<div class="relative w-full mb-3">
-														<textarea class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"></textarea>
+														<textarea id="txtSentiment" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"></textarea>
 													</div>
 													<div class="text-center mt-6">
-														<button class="bg-gray-900 text-white active:bg-gray-700 text-xl font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" type="button" style="transition:all .15s ease 0s">SUBMIT</button>
+														<button id="btnSubmit" class="bg-gray-900 text-white active:bg-gray-700 text-xl font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" type="button" style="transition:all .15s ease 0s">SUBMIT</button>
 													</div>
+
+													<div >
+
+													<code id="divResponse" class="inline-block"></code>	
+
+													</div>		
+
 												</form>
 											</div>
 										</div>
