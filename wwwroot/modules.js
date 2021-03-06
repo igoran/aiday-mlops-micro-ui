@@ -13,7 +13,8 @@ $(function(){
             $("#lblModelVersion").text(modelVersion);    
         }
     });
- 
+    
+
     $("#btnSubmit").click(function(event){
         var response = $("#divResponse");
         var text = $("#txtSentiment").val();
