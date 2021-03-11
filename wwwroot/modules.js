@@ -13,7 +13,14 @@ $(function(){
             $("#lblModelVersion").text(modelVersion);    
         }
     });
-    
+
+    $("#hrefSad").click(function(event){
+        $("#txtSentiment").val("Service stinks here!");
+    });
+
+    $("#hrefHappy").click(function(event){
+        $("#txtSentiment").val("Fantastic service here!");
+    });
 
     $("#btnSubmit").click(function(event){
         var response = $("#divResponse");
