@@ -15,11 +15,11 @@ $(function(){
     });
 
     $("#hrefSad").click(function(event){
-        $("#txtSentiment").val("Service stinks here!");
+        $("#txtSentiment").val("Very bad service");
     });
 
     $("#hrefHappy").click(function(event){
-        $("#txtSentiment").val("Fantastic service here!");
+        $("#txtSentiment").val("Fantastic service here");
     });
 
     $("#btnSubmit").click(function(event){
